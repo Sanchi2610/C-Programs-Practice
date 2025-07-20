@@ -5,19 +5,6 @@ struct node
     int data;
     struct node *next;
 };
-// int cycle(struct node * head)
-// {
-//     struct node *slow=head;
-//     struct node *fast=head;
-//     // while(fast->next!=NULL && fast->next->next!=NULL)
-//     // {
-//     //     slow=slow->next;
-//     //     fast=fast->next->next;
-//     // }
-
-//     int mid = slow->data;
-//     return mid;
-// }
 struct node *newnode(int data)
 {
     struct node *temp = (struct node *)malloc(sizeof(struct node));
