@@ -1,20 +1,18 @@
-#include <stdio.h>
-int main() 
+#include<stdio.h>
+#include<string.h>
+int main()
 {
-    int a[5] = {4, 3, 5, 1, 2};
-    int *left = a;
-    int *right = a + 4;   // point to last element
-    while(left < right)
+    char str[20]="san chi";
+    int j=0;
+    for(int i=0;str[i]!='\0';i++)
     {
-        int temp = *left;
-        *left = *right;
-        *right = temp;
-        left++;
-        right--;
+        if(str[i]!=' ')
+        {
+           str[j++]=str[i];
+        }
     }
-    for(int i=0; i<5; i++) 
-    {
-        printf("%d ", a[i]);
-    }
+    str[j]='\0';
+    printf("%s",str);
     return 0;
 }
+    
