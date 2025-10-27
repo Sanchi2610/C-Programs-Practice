@@ -1,28 +1,30 @@
-#include<stdio.h>
-#include <string.h>
-char duplicate(char [ ]);
+#include <stdio.h>
+#include<string.h>
+char string(char[]);
 int main()
 {
-    char str[10]="sanachi";
-    duplicate(str);
+    char str[10]="sannchi";
+    string(str);
     printf("%s",str);
     return 0;
 }
-char duplicate(char str[ ])
+char string(char str[ ])
 {
+    int index=0;
     for(int i=0;str[i]!='\0';i++)
     {
-      for(int j=i+1;str[j]!='\0';j++)  
-      {
-          if(str[i]==str[j])
-          {
-              for(int k=j;str[k]!='\0';k++)
-              {
-                  str[k]=str[k+1];
-              }
-            j--;
-          }
+        int dup=0;
+        for(int j=i+1;str[j]!='\0';j++)
+        {
+            if(str[i]==str[j])
+            {
+                dup++;
+            }
+        }
+       if(!dup)
+       {
+           str[index++]=str[i];
        }
     }
+    str[index]='\0';
 }
-    
