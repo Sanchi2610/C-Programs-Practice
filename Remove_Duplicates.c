@@ -1,22 +1,31 @@
-#include<stdio.h>
+#include <stdio.h>
 #include<string.h>
+char string(char[]);
 int main()
 {
-    char string[20]="Sanchisanchi";
-    for(int i=0;string[i]!='\0';i++)
-    {
-        for(int j=i+1;string[j]!='\0';j++)
-        {
-            if(string[i]==string[j])
-            {
-                for(int k=j;string[k]!='\0';k++)
-                {
-                    string[k]=string[k+1];
-                }
-               j--;
-            }
-        }
-    }
-    printf("%s",string);
+    char str[10]="sannchi";
+    string(str);
+    printf("%s",str);
     return 0;
 }
+char string(char str[ ])
+{
+    int index=0;
+    for(int i=0;str[i]!='\0';i++)
+    {
+        int dup=0;
+        for(int j=i+1;str[j]!='\0';j++)
+        {
+            if(str[i]==str[j])
+            {
+                dup++;
+            }
+        }
+    if(!dup)
+      {
+        str[index++]=str[i];
+      }
+    }
+     str[index]='\0';           
+}
+        
