@@ -1,18 +1,23 @@
-#include<stdio.h>
-#include<string.h>
-int main()
+#include <stdio.h>
+int main() 
 {
-    char str[20]="san chi";
-    int j=0;
-    for(int i=0;str[i]!='\0';i++)
+    int a[5] = {1, 2, 3, 4, 5};
+    int *left = a;           // pointer to first element
+    int *right = a + 4;      // pointer to last element
+    int temp;
+    while (left < right)     // swap until they meet
     {
-        if(str[i]!=' ')
-        {
-           str[j++]=str[i];
-        }
+        temp = *left;
+        *left = *right;
+        *right = temp;
+        left++;
+        right--;
     }
-    str[j]='\0';
-    printf("%s",str);
+    printf("Reversed array: ");
+    for (int i = 0; i < 5; i++)
+    {
+        printf("%d ", a[i]);
+    }
     return 0;
 }
-    
+   
