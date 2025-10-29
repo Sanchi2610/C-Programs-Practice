@@ -1,24 +1,28 @@
 #include <stdio.h>
-#include<string.h>
-int main()
+#include <string.h>
+
+void string(char str[])
 {
-    char string[10]="Sanchi";
-    int vowel=0,consonant=0;
-    for(int i=0;string[i]!='\0';i++)
+    for (int i = 0; str[i] != '\0'; i++)     // check each character
     {
-        if(string[i]>='a' && string[i]<='z' || string[i]>='A' && string[i]<='Z')
+        int dup = 0;
+        for (int j = 0; str[j] != '\0'; j++) // count how many times it appears
         {
-            if(string[i]=='a' || string[i]=='e' || string[i]=='i' || string[i]=='o' || string[i]=='u' || string[i]=='A' || string[i]=='E' || string[i]=='I' || string[i]=='O' || string[i]=='U' )
-            {
-                vowel++;
-            }
-            else
-            {
-                consonant++;
-            }
+            if (str[i] == str[j])
+                dup++;
+        }
+        if (dup == 1)                        // found the first unique one
+        {
+            printf("First non-repeating character: %c\n", str[i]);
+            return;                          // stop here — only the first one
         }
     }
-    printf("Vowel: %d\n",vowel);
-    printf("consonants: %d",consonant);
+    printf("No unique character found.\n");
+}
+
+int main()
+{
+    char str[10] = "ssnchi";
+    string(str);
     return 0;
 }
