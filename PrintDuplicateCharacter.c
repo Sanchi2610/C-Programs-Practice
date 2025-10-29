@@ -21,7 +21,7 @@ char string(char str[ ])
                 dup++;
             }
         }
-    if(!dup)
+    if(dup==1)
       {
         str[index++]=str[i];
       }
