@@ -5,10 +5,7 @@ int main()
 {
     char str[10]="saschi";
     char ch= string(str);
-    if(ch!='\0')
     printf("%c",ch);
-    else
-    printf("Not found");
     return 0;
 }
 char string(char str[])
@@ -26,7 +23,7 @@ char string(char str[])
         }
         if(dup==1)
         {
-            return str[i];
+           return str[i];
         }
     }
 }
