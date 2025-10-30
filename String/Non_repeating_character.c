@@ -3,9 +3,8 @@
 void string(char[]);
 int main() 
 {
-    char str[10]="sancchi";
+    char str[10]="sasn";
     string(str);
-    printf("%s",str);
     return 0;
 }
 void string(char str[])
@@ -23,8 +22,7 @@ void string(char str[])
         }
         if(dup==1)
         {
-            str[index++]=str[i];
+            printf("%c",str[i]);
         }
     }
-    str[index]='\0';
 }
