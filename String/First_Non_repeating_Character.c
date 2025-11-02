@@ -10,7 +10,7 @@ int main()
 }
 char string(char str[])
 {
-    int index=0;
+    int count=0;
     for(int i=0;str[i]!='\0';i++)
     {
         int dup=0;
@@ -23,7 +23,11 @@ char string(char str[])
         }
         if(dup==1)
         {
-           return str[i];
+            count++;
+            if(count==1)
+            {
+               return str[i];
+            }
         }
     }
 }
