@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include<string.h>
+char string(char[]);
+int main()
+{
+    char str[10]="saachii";
+    char ch=string(str);
+    printf("%c",ch);
+    return 0;
+}
+char string(char str[])
+{
+    int count=0;   
+    for(int i=0;str[i]!='\0';i++)
+    {
+        int dup=0;
+        for(int j=0;str[j]!='\0';j++)
+        {
+            if(str[i]==str[j])
+            {
+                dup++;
+            }
+        }
+        if(dup==1)
+        {
+            count++;
+            if(count==2)
+            return str[i];
+        }
+    }
+}
