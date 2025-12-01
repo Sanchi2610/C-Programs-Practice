@@ -1,19 +1,22 @@
 #include<stdio.h>
 #include<string.h>
-int main()
+void print_string(char[]);
+int main() 
 {
-    char str[20]="san chi";
-    int j=0;
+    char str[10]="san chi";
+    print_string(str);
+    printf("%s",str);
+    return 0;
+}
+void print_string(char str[])
+{
+    int index=0;
     for(int i=0;str[i]!='\0';i++)
     {
         if(str[i]!=' ')
         {
-           str[j++]=str[i];
+            str[index++]=str[i];
         }
     }
-    str[j]='\0';
-    printf("%s",str);
-    return 0;
+     str[index]='\0';
 }
-    
-    
