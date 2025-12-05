@@ -1,16 +1,15 @@
-#include<stdio.h>
-#include<string.h>
-void print_string(char[]);
-int main() 
+// Online C compiler to run C program online
+#include <stdio.h>
+int main()
 {
     char str[10]="sanchi";
-    print_string(str);
-    return 0;
-}
-void print_string(char str[])
-{
-    for(int i=0;str[i]!='\0';i++)
+    char *ptr=str;
+    int len=0;
+    while(*ptr!=0)
     {
-         printf("%c",str[i]);
+        len++;
+        ptr++;
     }
+    printf("%d",len);
+    return 0;
 }
