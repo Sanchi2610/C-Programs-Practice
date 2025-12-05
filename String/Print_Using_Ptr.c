@@ -1,9 +1,8 @@
 #include <stdio.h>
-#include<string.h>
-int main() 
+int main()
 {
-   char str[10]="sanchi";
-   char *ptr=&str[0];
-   printf("%s",str);
-   return 0;
+    char str[10]="sanchi";
+    char *ptr=str;
+    printf("%s",ptr);
+    return 0;
 }
