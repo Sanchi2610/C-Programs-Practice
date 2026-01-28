@@ -12,7 +12,7 @@ int main()
         }
         else
         {
-            for(int j=2;j<=a[i]/2;j++)
+            for(int j=2;j * j <=a[i];j++)
             {
                 if(a[i]%j==0)
                 {
