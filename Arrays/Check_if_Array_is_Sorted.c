@@ -1,21 +1,20 @@
-// Online C compiler to run C program online
 #include <stdio.h>
 int main()
 {
-    int a[5]={1,2,35,4,5};
+    int a[5]={5,6,77,9,89};
     int n=sizeof(a)/sizeof(a[0]);
-    int sort=1;
+    int sorted=1;
     int *p=&a[0];
-    while(p<a+n-1)
+    for(int i=0;i<n-1;i++)
     {
         if(*p>*(p+1))
         {
-            sort=0;
+            sorted=0;
             break;
         }
         p++;
     }
-    if(sort)
+    if(sorted)
     printf("Array is sorted");
     else
     printf("Array is not sorted");
