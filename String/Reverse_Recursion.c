@@ -19,8 +19,5 @@ void reverse(int left,char str[],int right)
         char temp=str[left];
         str[left]=str[right];
         str[right]=temp;
-        left++;
-        right--;
-    
-    reverse(left,str,right);
+    reverse(left+1,str,right-1);
 }
