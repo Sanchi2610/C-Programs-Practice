@@ -5,26 +5,52 @@ struct node
     int data;
     struct node *next;
 };
-struct node *newnode(int data)
+
+struct node* middle(struct node *head)
 {
-    struct node *temp = (struct node *)malloc(sizeof(struct node));
-    temp->data = data;
-    temp->next = NULL;
-    return temp;
-}
-int main()
-{
-    struct node *head = newnode(1);
-    head->next = newnode(2);
-    head->next->next = newnode(3);
-    head->next->next->next = newnode(4);
     struct node *slow=head;
     struct node *fast=head;
-    while(fast->next!=NULL && fast->next->next!=NULL)
+   
+    while(fast!=NULL && fast->next!=NULL)
     {
         slow=slow->next;
         fast=fast->next->next;
     }
-    printf("Middle of Link List : %d", slow->data);
+    return slow;
+}
+
+void travel(struct node *ptr)
+{
+    printf("Single Link List:");
+    while(ptr!=NULL)
+    {
+        printf("%d->",ptr->data);
+        ptr=ptr->next;
+    }
+    printf("Null\n");
+}
+
+int main() 
+{
+    struct node *head;
+    struct node *second;
+    struct node *third;
+    
+    head=(struct node*)malloc(sizeof(struct node));
+    second=(struct node*)malloc(sizeof(struct node));
+    third=(struct node*)malloc(sizeof(struct node));
+    
+    head->data=1;
+    head->next=second;
+    
+    second->data=2;
+    second->next=third;
+    
+    third->data=3;
+    third->next=NULL;
+    
+    travel(head);
+    struct node* mid=middle(head);
+    printf("%d",mid->data);
     return 0;
 }
