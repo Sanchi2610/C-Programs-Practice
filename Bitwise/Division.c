@@ -10,7 +10,7 @@ int main()
    {
        int temp=b;
        int count=1;
-       if((b<<1)<=a)
+       while((b<<1)<=a)
        {
            temp=temp<<1;
            count=count<<1;
