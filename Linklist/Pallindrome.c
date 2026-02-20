@@ -50,12 +50,12 @@ int pallindrome(struct node *first)
     struct node *reversemid=reverse(mid);
     struct node *p1=first;
     struct node *p2=reversemid;
-    {
-        if(p1->data!=p2->data)
-        return 0;
-        p1=p1->next;
-        p2=p2->next;
-    }
+    if(p1->data!=p2->data)
+        {
+          return 0;
+          p1=p1->next;
+          p2=p2->next;
+        }
     return 1;
 }
 
