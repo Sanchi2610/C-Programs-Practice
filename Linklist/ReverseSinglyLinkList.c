@@ -6,7 +6,7 @@ struct node
     struct node *next;
 };
 
-struct node* reverse(struct node *head)
+struct node *reverse(struct node *head)
 {
     struct node *current=head;
     struct node *previous=NULL;

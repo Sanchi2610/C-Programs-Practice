@@ -6,7 +6,7 @@ struct node
     struct node *next;
 };
 
-struct node* middle(struct node *head)
+struct node *middle(struct node *head)
 {
     struct node *slow=head;
     struct node *fast=head;
@@ -50,7 +50,7 @@ int main()
     third->next=NULL;
     
     travel(head);
-    struct node* mid=middle(head);
+    struct node *mid=middle(head);
     printf("%d",mid->data);
     return 0;
 }

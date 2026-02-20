@@ -3,7 +3,7 @@
 struct node
 {
     int data;
-    struct node* next;
+    struct node *next;
 };
 void linkilisttravel(struct node *ptr)
 {
