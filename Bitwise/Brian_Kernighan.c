@@ -7,7 +7,7 @@ int main()
     int count=0;
     while(a!=0)
     {
-        a=a&(a-1);
+        a=a&(a-1);//remove LSB
         count++;
     }
     printf("Count:%d",count);
