@@ -1,7 +1,7 @@
 #include <stdio.h>
 int main() 
 {
-    unsigned char num=0xf0;
+    unsigned char num=0xf0;//1111 0000
     unsigned char x=num;
     unsigned char r=0;
     for(int i=0;i<8;i++)
