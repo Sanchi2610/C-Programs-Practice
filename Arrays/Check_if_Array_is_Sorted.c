@@ -5,7 +5,7 @@ int main()
     int n=sizeof(a)/sizeof(a[0]);
     int sorted=1;
     int *p=&a[0];
-    if(*p>*(p+1))//1>4
+    if(*p>*(p+1))
         {
           sorted=0;
         }
