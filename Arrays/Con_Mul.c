@@ -7,9 +7,11 @@ int main()
     scanf("%d",&a[0]);
     printf("Enter sec element:");
     scanf("%d",&a[1]);
+    int *p=&a[2];
     for(int i=2;i<n;i++)
     {
-        a[i]=a[i-2]*a[i-1];
+        a[i]=(*(p-1) * *(p-2));
+        p++;
     }
     for(int i=0;i<n;i++)
     {
