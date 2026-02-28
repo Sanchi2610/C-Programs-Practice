@@ -11,10 +11,10 @@ struct node *middle(struct node *head)
     struct node *slow=head;
     struct node *fast=head;
    
-    while(fast!=NULL && fast->next!=NULL)
+    while(fast!=NULL && fast->next!=NULL)//fasst 3 la ahe,next step la to NULL jato so out of loop and return slow 
     {
-        slow=slow->next;
-        fast=fast->next->next;
+        slow=slow->next;//1 2
+        fast=fast->next->next;//1 3 
     }
     return slow;
 }
