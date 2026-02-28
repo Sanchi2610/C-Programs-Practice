@@ -11,7 +11,7 @@ struct node *middle(struct node *head)
     struct node *slow=head;
     struct node *fast=head;
    
-    while(fast!=NULL && fast->next!=NULL)//fasst 3 la ahe,next step la to NULL jato so out of loop and return slow 
+    while(fast!=NULL && fast->next!=NULL)//fast 3 la ahe,next step la to NULL jato so out of loop and return slow 
     {
         slow=slow->next;//1 2
         fast=fast->next->next;//1 3 
