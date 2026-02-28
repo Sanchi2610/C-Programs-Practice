@@ -44,18 +44,21 @@ void travel(struct node* ptr)
     printf("NULL\n");
 }
 
-int pallindrome(struct node *first)
+int pallindrome(struct node *first)// 1 2
 {
-    struct node *mid=middle(first);
-    struct node *reversemid=reverse(mid);
-    struct node *p1=first;
-    struct node *p2=reversemid;
-    if(p1->data!=p2->data)
+    struct node *mid=middle(first);//2
+    struct node *midrev=reverse(mid);// 2 1
+    struct node *p=first;// 1 2
+    struct node *q=midrev;//2 1
+    while(q!=NULL)
+    {
+        if(p->data!=q->data)
         {
-          return 0;
-          p1=p1->next;
-          p2=p2->next;
+            return 0;
         }
+        p=p->next;
+        q=q->next;
+    }
     return 1;
 }
 
