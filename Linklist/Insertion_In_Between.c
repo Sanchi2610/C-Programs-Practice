@@ -19,17 +19,17 @@ void travel(struct node *ptr)
 
 struct node *insertionatindex(struct node *first,int data,int index)
 {
-  struct node *ptr=(struct node*)malloc(sizeof(struct node));
+  struct node *ptr=(struct node*)malloc(sizeof(struct node));//new node
   struct node *p=first;//move 
-  int i=0;
-  while(i!=index-1)//count
+  int i=0;//count
+  while(i!=index-1)//0 ala tar out out of loop
   {
       p=p->next;
       i++;
   }
-  ptr->data=data;
-  ptr->next=p->next;
-  p->next=ptr;
+  ptr->data=data;//ptr=7,p=2
+  ptr->next=p->next;//(ini. so 0)  ptr->nt=2->nt 3  ptr->nt=2->nt 7
+  p->next=ptr;//                   p->nt=7 (7,3)    p->nt=ptr (hold address of ptr) 
   return first;
 }
 
@@ -49,11 +49,11 @@ int main()
     second->data=2;
     second->next=third;
     
-    third->data=4;
+    third->data=3;
     third->next=NULL;
     
     travel(first);
-    first=insertionatindex(first,35,2);
+    first=insertionatindex(first,7,2);
     travel(first);
     
     return 0;
