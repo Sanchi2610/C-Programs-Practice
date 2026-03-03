@@ -19,10 +19,10 @@ void travel(struct node *ptr)
 
 struct node *insertion(struct node *first,int data)
 {
-   struct node *ptr=(struct node*)malloc(sizeof(struct node));
-   ptr->data=data;
-   ptr->next=first;
-   return ptr;
+   struct node *ptr=(struct node*)malloc(sizeof(struct node));//node space by using ptr
+   ptr->data=data;//ptr->data=data
+   ptr->next=first;//ptr->next=first means pointer holds address of first
+   return ptr;//ptr begining la ahe so tyala consider karaych ahe so return ptr
 }
 
 int main() 
