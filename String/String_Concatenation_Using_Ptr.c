@@ -1,20 +1,23 @@
-#include<stdio.h>
+#include <stdio.h>
 int main()
 {
-    char s1[10]="san";
-    char s2[10]="chi";
-    char *p=s1;
-    char *q=s2;
+    char str1[30]="sanchi";
+    char str2[30]=" gaikwad";
+    char *p=&str1[0];
+    char *q=&str2[0];
+    int i=0;
     while(*p!='\0')
     {
         p++;
     }
-    while(*q!='\0' && p-s1<(int)sizeof(s1)-1)
+    while(*q!='\0')
     {
-        *p=*q;
-         p++;
-         q++;
+       *p=*q;
+        p++;
+        q++;
+        
     }
     *p='\0';
-    printf("%s",s1);
+    printf("%s",str1);
+    return 0;
 }
