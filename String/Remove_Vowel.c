@@ -1,17 +1,26 @@
 #include <stdio.h>
 #include <string.h>
-int main() 
+char vowel(char[]);
+int main()
 {
-    char str[10]="sanchi";
-    int j=0;
+    char str[30]="sanchi";
+    int len=strlen(str);
+    vowel(str);
+    printf("%s\n",str);
+    return 0;
+}
+char vowel(char str[])
+{
+    int v=0,index=0;
     for(int i=0;str[i]!='\0';i++)
     {
-        if(str[i]!='a' && str[i]!='e' && str[i]!='i' && str[i]!='o' && str[i]!='u')
+        if((str[i]>='A' && str[i]<='Z') || (str[i]>='a' && str[i]<='z'))
         {
-             str[j++]=str[i];// 2 pointer method.i=read & j=write
+            if(str[i]!='a' && str[i]!='e' && str[i]!='i' && str[i]!='o' && str[i]!='u')
+            {
+                str[index++]=str[i];
+            }
         }
     }
-    str[j]='\0';
-    printf("%s",str);
-    return 0;
+    str[index]='\0';
 }
