@@ -1,18 +1,22 @@
 #include <stdio.h>
 int main()
 {
-    int a[4]={11,4,27,56};
-    int n=sizeof(a)/sizeof(a[0]);
+    int a[5]={1,2,3,4,5};
     int sorted=1;
     int *p=&a[0];
-    if(*p>*(p+1))
+    int  n=sizeof(a)/sizeof(a[0]);
+    while(p<a+n-1)
+    {
+        if(*p > *(p+1))
         {
-          sorted=0;
+            sorted=0;
+            
         }
-        p++;
+      p++;
+    }
     if(sorted)
-    printf("Sorted");
+    printf("yes");
     else
-    printf("Not sorted");
+    printf("No");
     return 0;
 }
