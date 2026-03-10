@@ -6,8 +6,8 @@ int main()
     unsigned char r=0;
     for(int i=0;i<8;i++)
     {
-        r=(r<<1)|(x&1);
-        x=x>>1;
+        r=(r<<1)|(x&1);//Space(<<),Extract(&),Add(|)
+        x=x>>1;//Process 
     }
     printf("num:0x%02X\n",num);
     printf("Rev:0x%02X\n",r);
