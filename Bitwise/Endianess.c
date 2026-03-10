@@ -5,7 +5,7 @@ int main()
     //hex data on 32-bit(bz it is unsigned int)
     unsigned char *ptr=(unsigned char*)&num;
     //char ptr bz only one value,&num=address of num
-    if(*ptr==11)
+    if(*ptr==0x11)
     //ptr is at that location
     printf("Little endian");
     else
