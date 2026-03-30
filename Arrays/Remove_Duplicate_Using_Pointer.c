@@ -1,23 +1,22 @@
 #include <stdio.h>
 int main() 
 {
-    int a[ ]={1,2,3,1,4,2};
+    int a[ ]={1,3,1,5,3,6};
     int n=sizeof(a)/sizeof(a[0]);
+    int *p=&a[0];
     for(int i=0;i<n;i++)
     {
-        int *p=&a[i];
-        int duplicate=0;
-        for(int j=i+1;j<n;j++)
+        int dup=0;
+        for(int j=0;j<n;j++)
         {
-            int *q=&a[j];
-            if(*p==*q)
+            if(*(p+i)==*(p+j))
             {
-                duplicate++;
+                dup++;
             }
         }
-        if(duplicate==0)
+        if(dup==1)
         {
-            printf("%d",a[i]);
+            printf(" %d",a[i]);
         }
     }
     return 0;
