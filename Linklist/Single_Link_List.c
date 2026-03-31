@@ -5,9 +5,9 @@ struct node
     int data;
     struct node *next;
 };
-void linkilisttravel(struct node *ptr)
+void travel(struct node *ptr)
 {
-    printf("Single link list: ");
+    printf("Single link list:");
     while(ptr!=NULL)
     {
         printf("%d->",ptr->data);
@@ -17,19 +17,24 @@ void linkilisttravel(struct node *ptr)
 }
 int main()
 {
-    struct node *head; //node declare
+    struct node *first; //node declare
     struct node *second;
     struct node *third;
-    head=(struct node*)malloc(sizeof(struct node));//memory allocation in heap
+    
+    first=(struct node*)malloc(sizeof(struct node));
     second=(struct node*)malloc(sizeof(struct node));
     third=(struct node*)malloc(sizeof(struct node));
-    head->data=7;//linking
-    head->next=second;
-    second->data=11;
+    
+    first->data=1;//linking
+    first->next=second;
+    
+    second->data=2;
     second->next=third;
-    third->data=66;
+    
+    third->data=3;
     third->next=NULL;
-    linkilisttravel(head);
+    
+    travel(first);
     return 0;
 
 }
