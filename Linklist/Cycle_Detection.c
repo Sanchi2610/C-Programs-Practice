@@ -5,37 +5,56 @@ struct node
     int data;
     struct node *next;
 };
-int cycle(struct node *head)
+
+void travel(struct node *ptr)
 {
-    struct node *slow=head;
-    struct node *fast=head;
-    while(fast!=NULL && fast->next!=NULL)
+    printf("Single link list:");
+    while(ptr!=NULL)
     {
-        slow=slow->next;
+        printf("%d->",ptr->data);
+        ptr=ptr->next;
+    }
+    printf("NULL\n");
+}
+
+int detect(struct node *first)
+{
+    struct node *fast=first;
+    struct node *slow=first;
+    while(fast->next!=NULL && fast->next->next!=NULL)
+    {
         fast=fast->next->next;
+        slow=slow->next;
         if(fast==slow)
-        {
+      {
         return 1;
-        }
+      }
     }
     return 0;
 }
-struct node *newnode(int data)
-{
-    struct node *temp = (struct node *)malloc(sizeof(struct node));
-    temp->data = data;
-    temp->next = NULL;
-    return temp;
-}
+
 int main()
 {
-    struct node *head = newnode(1);
-    head->next = newnode(2);
-    head->next->next = newnode(3);
-    head->next->next->next = head->next;
-    if(cycle(head))
-    printf("Cycle detect");
+    struct node *first; //node declare
+    struct node *second;
+    struct node *third;
+    
+    first=(struct node*)malloc(sizeof(struct node));
+    second=(struct node*)malloc(sizeof(struct node));
+    third=(struct node*)malloc(sizeof(struct node));
+    
+    first->data=1;//linking
+    first->next=second;
+    
+    second->data=2;
+    second->next=third;
+    
+    third->data=3;
+    third->next=first->next;
+    
+    if(detect(first))
+    printf("Yes");
     else
-    printf("cycle not detect");
+    printf("No");
     return 0;
 }
