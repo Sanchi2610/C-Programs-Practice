@@ -1,10 +1,12 @@
 #include<stdio.h>
 #include<stdlib.h>
+
 struct node
 {
     int data;
     struct node *next;
 };
+
 void travel(struct node *ptr)
 {
     printf("Single link list:");
@@ -13,8 +15,9 @@ void travel(struct node *ptr)
         printf("%d->",ptr->data);
         ptr=ptr->next;
     }
-    printf("NULL");
+    printf("NULL\n");
 }
+
 int main()
 {
     struct node *first; //node declare
