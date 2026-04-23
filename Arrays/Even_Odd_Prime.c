@@ -1,39 +1,34 @@
 #include <stdio.h>
-int main()
+int main() 
 {
-    int a[5]={2,3,1,4,5};
+    int a[]={1,2,3,4,5};
     int n=sizeof(a)/sizeof(a[0]);
     for(int i=0;i<n;i++)
     {
-        int prime=1;
-        if(a[i]<=1)
+        if(a[i]%2==0)
         {
+          printf("%d is even\n",a[i]);
+        }
+        else
+        { 
+          int prime=1;
+          if(a[i]<=1)
+          {
             prime=0;
-        }
-        else
-        {
-            for(int j=2;j * j <=a[i];j++)
+          }
+          for(int j=2;j*j<=a[i];j++)
+          {
+            if(a[i]%j==0)
             {
-                if(a[i]%j==0)
-                {
-                    prime=0;
-                    break;
-                }
+                prime=0;
             }
-        }
+          }
         if(prime)
-        printf("%d:Prime\n",a[i]);
+        printf("%d is prime\n",a[i]);
         else
-        {
-           if(a[i]%2==0)
-           {
-            printf("%d:Even\n",a[i]);
-           }
-             if(a[i]%2!=0)
-              {
-                printf("%d:Odd\n",a[i]);
-              }
-        }      
+        printf("%d is odd\n",a[i]);
+        }
     }
     return 0;
 }
+        
